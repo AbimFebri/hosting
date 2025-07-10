@@ -62,6 +62,15 @@ return [
             ]) : [],
         ],
 
+        // --- TAMBAHKAN BAGIAN INI UNTUK SSL ---
+    'options' => extension_loaded('pdo_mysql') ? array_filter([
+        PDO::MYSQL_ATTR_SSL_CA => env('DB_SSL_CA'),
+        // Tambahkan opsi lain jika diperlukan oleh TiDB atau lingkungan Anda
+        // PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true, // Opsional, untuk verifikasi lebih ketat
+    ]) : [],
+    // ------------------------------------
+],
+
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),
