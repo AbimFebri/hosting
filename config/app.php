@@ -51,8 +51,7 @@ return [
     | the application so that it's available within Artisan commands.
     |
     */
-
-    'url' => env('APP_URL', 'http://localhost'),
+'url' => 'http://hosting-production-0394.up.railway.app', // Ini SALAH (hardcoded)
 
     /*
     |--------------------------------------------------------------------------
