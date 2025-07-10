@@ -4,8 +4,12 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'], // <-- Pastikan ini app.css
+            // Hapus input app.css dan app.js jika tidak ada lagi aset kustom
+            input: [], // Atau biarkan kosong jika tidak ada aset Vite lain
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'public/build', // Biarkan ini
+    }
 });
